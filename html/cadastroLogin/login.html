@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light ">
             <a class="navbar-brand" href="../../index.html">ExerciseRemenber</a>
@@ -21,23 +22,45 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="../../index.html">Home</a>
-                    <a class="nav-item nav-link" href="../../html/cadastroLogin/login.html">Login</a>
+                    <a class="nav-item nav-link active" href="../../html/cadastroLogin/login.html">Login<span
+                            class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="../detalhes.html">Sobre</a>
                     <a class="nav-item nav-link" href="../../html/recSenhaContato/contatos.html">Contato</a>
-                    <a class="nav-item nav-link active" href="#">Cadastro<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="../cadastroLogin/cadastro.html">Cadastro</a>
                 </div>
             </div>
         </nav>
     </header>
 
     <main>
-        <form action="">
-
-        </form>
+        <section class="login form m-5 d-flex flex-column align-items-center">
+            <h2 class="mt-2 mb-3">Login</h2>
+            <form class="mt-2">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="email class="form-text">Nós nunca iremos compartilhar seu email para terceiros</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <section class="bottom-login d-flex flex-row justify-content-between align-items-center">
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <div class="mb-2 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Manter logado</label>
+                    </div>
+                </section>
+                <section class="links d-flex flex-row align-items-center justify-content-around mt-4">
+                    <a href="../recSenhaContato/recSenha.html">Esqueceu sua senha?</a>
+                </section>   
+            </form>
+        </section>
     </main>
 
-    <footer>
-
+    <footer class="mb-2">
+        <p class="text-center"> copyright 2022&copy; ExerciseRemenber. Todos os direitos reservados</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
