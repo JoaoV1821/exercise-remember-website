@@ -1,7 +1,6 @@
 class CadastroView {
-    renderError(erro, seletor) {
-        seletor.text(erro);
-        seletor.css('color', 'red');
+    renderError(erro) {
+       alert(erro);
     };
 
     renderSuccess() {

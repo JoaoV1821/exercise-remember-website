@@ -1,30 +1,34 @@
 class CadastroModel {
-    constructor(email, senha,confSenha, rg, cep) {
+    constructor(email, senha, confSenha, rg, cep) {
         this._email = this._validaEmail(email);
         this._senha = this._validaSenha(senha, confSenha);
         this._rg = this._validaRg(rg);
-        this._cep = this._buscaCep(cep);
-        
+        this._cep = this._buscaCep(cep);    
     };
 
     _validaEmail(email) {
+        
         if (email == '') {
             throw new Error('*Este campo é obrigatório');
-        } else if (email.includes('@') && email.includes('.com')) {
-            return email;
-        } else {
+
+        } else if (!email.includes('@') || !email.includes('.com')) {
+        
             throw new Error('*Email inválido');
-        }
+
+        } else {
+           return email;
+        };
     };
 
     _validaSenha(senha, confSenha) {
+        console.log(senha, confSenha)
         if (senha == '') {
             throw new Error('*Este campo é obrigatório');
 
-        } else if(senha.length < 8) {
+        } else if (senha.length < 8) {
             throw new Error('*A senha deve ter no mínimo 8 caracteres');
 
-        } else if(senha !== confSenha) {
+        } else if (senha !== confSenha) {
             throw new Error('*As senhas não correspondem');
 
         } else {
@@ -32,20 +36,21 @@ class CadastroModel {
         };
     };
 
-    
     _validaRg(rg) {
         if (rg == '') {
             throw new Error('*Este campo é obrigatório');
+
         } else {
             for (let i=0; i<rg.length; i++) {
                 if(rg[i] == '.' || rg[i] == '-') {
                     rg = rg.replace(rg[i], '');
-                } 
-            }
+                }; 
+            };
+
             if(rg.length < 9) {
-                throw new Error('*RG inválido')
-            }
-        }
+                throw new Error('*RG inválido');
+            };
+        };
 
         return rg;
     };
@@ -53,6 +58,7 @@ class CadastroModel {
     _buscaCep(cep) {
         if (cep == '') {
             throw new Error('*Este campo é obrigatório');
+
         } else {
             const url = `https://viacep.com.br/ws/${cep}/json/`;
             const data = {};
@@ -65,13 +71,15 @@ class CadastroModel {
 
                 if (response.erro) {
                     throw new Error('*CEP inválido!');
-                } else {
 
+                } else {
                     data.estado = response.uf;
                     data.cidade = response.localidade;
                     data.bairro = response.bairro;
                     data.complemento = response.complemento;
                     data.rua = response.logradouro;
+
+                    console.log(data)
                 };
 
             }).fail((xhr, status, error) => {
