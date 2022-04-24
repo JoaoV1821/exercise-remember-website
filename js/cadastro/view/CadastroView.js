@@ -1,11 +1,8 @@
 class CadastroView {
-    renderError(erro) {
-       alert(erro);
+    renderError(menssage, input) {
+        console.error(menssage)
     };
 
     renderSuccess() {
-        const textSuccess = $('#text-success');
-        textSuccess.text('Cadastro efetuado');
     }
-};
-
+}

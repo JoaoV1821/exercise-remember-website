@@ -1,22 +1,27 @@
-const main = () => {
-    const controller = new CadastroController();
-    const dataSelectors = {};
+const selectors = {};
+const buttom = $('#submit');
+const cepSubmit = $('#cep-submit');
 
-    dataSelectors.email = $('#email').val()
-    dataSelectors.senha = $('#senha').val()
-    dataSelectors.confSenha = $('#confSenha').val();
-    dataSelectors.rg = $('#rg').val()
-    dataSelectors.cep = $('#cep').val()
-    dataSelectors.estado = $('#estado')
-    dataSelectors.cidade = $('#cidade')
-    dataSelectors.bairro = $('#bairro')
-    dataSelectors.rua = $('#rua');
-    dataSelectors.complemento = $('#complemento')
+selectors.email = $('#email');
+selectors.senha = $('#senha');
+selectors.confSenha = $('#confSenha');
+selectors.rg = $('#rg');
+selectors.cep = $('#cep');
+selectors.estado = $('#estado');
+selectors.cidade = $('#cidade');
+selectors.bairro = $('#bairro');
+selectors.complemento = $('#complemento');
+selectors.rua = $('#rua');
 
-    controller.cadastro(dataSelectors)
-};
 
-$('#submit').click( (event) => { 
+const controller = new CadastroController(selectors);
+
+buttom.click((event) => {
     event.preventDefault();
-    main();
+    controller.cadastro()
+});
+
+cepSubmit.click((event) => {
+    event.preventDefault();
+    controller.buscaCep();
 });

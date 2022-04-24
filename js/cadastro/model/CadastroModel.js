@@ -1,67 +1,73 @@
 class CadastroModel {
-    constructor(email, senha, confSenha, rg, cep) {
-        this._email = this._validaEmail(email);
-        this._senha = this._validaSenha(senha, confSenha);
-        this._rg = this._validaRg(rg);
-        this._cep = this._buscaCep(cep);    
+    constructor(email, senha, rg, cep) {
+        this._email = email;
+        this._senha = senha;
+        this._rg = rg;
+        this._cep = cep;
     };
 
-    _validaEmail(email) {
-        
-        if (email == '') {
+    validaEmail() {
+        if (this.email.val() == '') {
             throw new Error('*Este campo é obrigatório');
 
-        } else if (!email.includes('@') || !email.includes('.com')) {
-        
+        } else if (!this.email.val().includes('@') || !this.email.val().includes('.com')) {
+
             throw new Error('*Email inválido');
 
         } else {
-           return email;
+            return this.email.val();
         };
     };
 
-    _validaSenha(senha, confSenha) {
-        console.log(senha, confSenha)
-        if (senha == '') {
+    validaSenha(confSenha) {
+        if (this.senha.val() == '') {
             throw new Error('*Este campo é obrigatório');
 
-        } else if (senha.length < 8) {
+        } else if (this.senha.val().length < 8) {
             throw new Error('*A senha deve ter no mínimo 8 caracteres');
 
-        } else if (senha !== confSenha) {
+        } else if (this.senha.val() !== confSenha.val()) {
             throw new Error('*As senhas não correspondem');
 
         } else {
-            return senha;
+            return this.senha.val();
         };
     };
 
-    _validaRg(rg) {
-        if (rg == '') {
+    validaRg() {
+        if (this.rg.val() == '') {
             throw new Error('*Este campo é obrigatório');
 
         } else {
-            for (let i=0; i<rg.length; i++) {
-                if(rg[i] == '.' || rg[i] == '-') {
-                    rg = rg.replace(rg[i], '');
-                }; 
+            for (let i = 0; i < rg.length; i++) {
+                if (this.rg.val()[i] == '.' || this.rg.val()[i] == '-') {
+                    this.rg.val() = this.rg.val().replace(this.rg.val()[i], '');
+                };
             };
 
-            if(rg.length < 9) {
+            if (this.rg.val().length < 9) {
+                console.log(this.rg.val());
                 throw new Error('*RG inválido');
             };
         };
 
-        return rg;
+        return this.rg.val();
     };
 
-    _buscaCep(cep) {
-        if (cep == '') {
+    buscaCep(selectors) {
+        const data = {
+            estado: '',
+            cidade: '',
+            bairro: '',
+            complemento: '',
+            rua: '',
+        };
+
+        if (this.cep.val() == '') {
             throw new Error('*Este campo é obrigatório');
 
         } else {
-            const url = `https://viacep.com.br/ws/${cep}/json/`;
-            const data = {};
+            const url = `https://viacep.com.br/ws/${this.cep.val()}/json/`;
 
             $.ajax({
                 type: "GET",
@@ -73,13 +79,18 @@ class CadastroModel {
                     throw new Error('*CEP inválido!');
 
                 } else {
-                    data.estado = response.uf;
-                    data.cidade = response.localidade;
-                    data.bairro = response.bairro;
-                    data.complemento = response.complemento;
-                    data.rua = response.logradouro;
 
-                    console.log(data)
+                    data['estado'] = response.uf;
+                    data['cidade'] = response.localidade;
+                    data['bairro'] = response.bairro;
+                    data['complemento'] = response.complemento;
+                    data['rua'] = response.logradouro;
+
+                    selectors.estado.val(data.estado)
+                    selectors.cidade.val(data.cidade)
+                    selectors.bairro.val(data.bairro)
+                    selectors.rua.val(data.rua)
+                    selectors.complemento.val(data.complemento)
                 };
 
             }).fail((xhr, status, error) => {
@@ -87,10 +98,20 @@ class CadastroModel {
                     throw new Error('*CEP inexistente');
                 };
             });
-
-            return data;
         };
     };
+
+    get email() {
+        return this._email;
+    };
+
+    get senha() {
+        return this._senha;
+    };
+
+    get rg() {
+        return this._rg;
+    }
 
     get cep() {
         return this._cep;

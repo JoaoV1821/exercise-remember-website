@@ -1,22 +1,43 @@
 class CadastroController {
-    cadastro(dataSelectors) {
+    constructor(selectors) {
+        this.selectors = selectors;
+        this.view = new CadastroView();
+        this.model = new CadastroModel(this.selectors.email, this.selectors.senha, this.selectors.rg, this.selectors.cep);
+    };
 
-        const view = new CadastroView();
-
+    cadastro() {
+        
         try {
-            const model = new CadastroModel(dataSelectors.email, dataSelectors.senha, dataSelectors.confSenha, dataSelectors.rg, dataSelectors.cep);
-
-            dataSelectors.estado.text(model.cep.estado)
-            dataSelectors.cidade.val(model.cep.cidade) 
-            dataSelectors.bairro.val(model.cep.bairro) 
-            dataSelectors.rua.val(model.cep.rua)
-            dataSelectors.complemento.val(model.cep.complemento)
+            this.model.validaEmail();
+            this.view.renderSuccess();
 
         } catch (error) {
-           console.error(error)
-        }
+            this.view.renderError(error, this.selectors.email);
+        };
 
-        view.renderSuccess()
+        try {
+            this.model.validaSenha(this.selectors.confSenha);
+            this.view.renderSuccess();
 
+        } catch (error) {
+            this.view.renderError(error, this.selectors.senha);
+        };
+
+        try {
+            this.model.validaRg();
+            this.view.renderSuccess();
+
+        } catch (error) {
+            this.view.renderError(error, this.selectors.rg);
+        };
+    };
+
+    buscaCep() {
+        try {
+            this.model.buscaCep(this.selectors);
+
+        } catch (error) {
+            this.view.renderError(error, this.selectors.cep)
+        };
     }
-}
+};

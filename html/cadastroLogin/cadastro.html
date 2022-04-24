@@ -44,26 +44,36 @@
                     <div class="form-group col-md-3">
                         <label for="inputEmail4">Email</label>
                         <input type="email" class="form-control" placeholder="Email" id="email">
+                        <small></small>
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="inputPassword4">Senha</label>
                         <input type="password" class="form-control" placeholder="Senha" id="senha">
+                        <small></small>
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="inputPassword4">Confirme a senha</label>
                         <input type="password" class="form-control" placeholder="Senha" id="confSenha">
+                        <small></small>
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="rg">RG</label>
-                        <input type="text" class="form-control" id="rg" placeholder="00-000-000-0">
+                        <input type="text" class="form-control" id="rg" placeholder="00.000.000-0">
+                        <small></small>
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="cep">CEP</label>
-                        <input type="text" class="form-control" id="cep" placeholder="00000-000">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <button class="btn btn-outline-secondary" type="submit" id="cep-submit">Procurar</button>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Cep" aria-label="" aria-describedby="basic-addon1" id="cep">
+                            <small></small>
+                          </div>
                     </div>
 
                     <div class="form-group col-md-3">
