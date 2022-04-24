@@ -67,37 +67,46 @@ class CadastroModel {
             throw new Error('*Este campo é obrigatório');
 
         } else {
-            const url = `https://viacep.com.br/ws/${this.cep.val()}/json/`;
+            for (let i = 0; i < this.cep.val().length; i++) {
+                if (this.cep.val()[i] == '-') {
+                    this.cep.val(this.cep.val().replace(this.cep.val()[i], ''))
+                }
+            };
 
-            $.ajax({
-                type: "GET",
-                url: url,
+            if (this.cep.val().length < 8 || this.cep.val().length > 8) {
+                throw new Error('*CEP inválido');
 
-            }).done((response) => {
+            } else {
+                const url = `https://viacep.com.br/ws/${this.cep.val()}/json/`;
 
-                if (response.erro) {
-                    throw new Error('*CEP inválido!');
+                $.ajax({
+                    type: "GET",
+                    url: url,
 
-                } else {
+                }).done((response) => {
 
-                    data['estado'] = response.uf;
-                    data['cidade'] = response.localidade;
-                    data['bairro'] = response.bairro;
-                    data['complemento'] = response.complemento;
-                    data['rua'] = response.logradouro;
+                    if (response.erro) {
+                        throw new Error('*CEP inválido');
 
-                    selectors.estado.val(data.estado)
-                    selectors.cidade.val(data.cidade)
-                    selectors.bairro.val(data.bairro)
-                    selectors.rua.val(data.rua)
-                    selectors.complemento.val(data.complemento)
-                };
+                    } else {
+                        data['estado'] = response.uf;
+                        data['cidade'] = response.localidade;
+                        data['bairro'] = response.bairro;
+                        data['complemento'] = response.complemento;
+                        data['rua'] = response.logradouro;
 
-            }).fail((xhr, status, error) => {
-                if (xhr.status == 0) {
-                    throw new Error('*CEP inexistente');
-                };
-            });
+                        $(`#${data.estado}`).attr('selected', 'true');
+                        
+                        selectors.cidade.val(data.cidade);
+                        selectors.bairro.val(data.bairro);
+                        selectors.rua.val(data.rua);
+                        selectors.complemento.val(data.complemento);
+                    };
+
+                }).fail((xhr, status) => {
+                    xhr.abort()
+                });
+            };
         };
     };
 

@@ -1,6 +1,14 @@
 class CadastroView {
-    renderError(menssage, input) {
-        console.error(menssage)
+    renderError(menssage, id, input) {
+        const newMenssage = menssage.replace('Error:', '')
+        const msgId = $(`#${id}`);
+        
+        msgId.text(newMenssage);
+        msgId.css('color', 'red')
+
+        input.click(() => {
+            msgId.text('');
+        })
     };
 
     renderSuccess() {

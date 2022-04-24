@@ -6,13 +6,15 @@ class CadastroController {
     };
 
     cadastro() {
-        
+
         try {
             this.model.validaEmail();
             this.view.renderSuccess();
 
         } catch (error) {
-            this.view.renderError(error, this.selectors.email);
+            console.log(typeof (error))
+            console.log(error)
+            this.view.renderError(`${error}`, 'email-error', this.selectors.email);
         };
 
         try {
@@ -20,7 +22,7 @@ class CadastroController {
             this.view.renderSuccess();
 
         } catch (error) {
-            this.view.renderError(error, this.selectors.senha);
+            this.view.renderError(`${error}`, 'senha-error', this.selectors.senha);
         };
 
         try {
@@ -28,7 +30,7 @@ class CadastroController {
             this.view.renderSuccess();
 
         } catch (error) {
-            this.view.renderError(error, this.selectors.rg);
+            this.view.renderError(`${error}`, 'rg-error', this.selectors.rg);
         };
     };
 
@@ -37,7 +39,7 @@ class CadastroController {
             this.model.buscaCep(this.selectors);
 
         } catch (error) {
-            this.view.renderError(error, this.selectors.cep)
+            this.view.renderError(`${error}`, 'cep-error', this.selectors.cep);
         };
     }
 };

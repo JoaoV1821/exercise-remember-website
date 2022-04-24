@@ -44,25 +44,25 @@
                     <div class="form-group col-md-3">
                         <label for="inputEmail4">Email</label>
                         <input type="email" class="form-control" placeholder="Email" id="email">
-                        <small></small>
+                        <small class="error" id="email-error"></small>
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="inputPassword4">Senha</label>
                         <input type="password" class="form-control" placeholder="Senha" id="senha">
-                        <small></small>
+                        <small class="error" id="senha-error"></small>
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="inputPassword4">Confirme a senha</label>
                         <input type="password" class="form-control" placeholder="Senha" id="confSenha">
-                        <small></small>
+                        <small class="error" id="senha-error"></small>
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="rg">RG</label>
                         <input type="text" class="form-control" id="rg" placeholder="00.000.000-0">
-                        <small></small>
+                        <small class="error" id="rg-error"></small>
                     </div>
 
                     <div class="form-group col-md-3">
@@ -72,15 +72,41 @@
                               <button class="btn btn-outline-secondary" type="submit" id="cep-submit">Procurar</button>
                             </div>
                             <input type="text" class="form-control" placeholder="Cep" aria-label="" aria-describedby="basic-addon1" id="cep">
-                            <small></small>
                           </div>
+                          <small class="error" id="cep-error"></small>
                     </div>
 
                     <div class="form-group col-md-3">
                         <label for="inputState">Estado</label>
                         <select id="Estado" class="form-control">
-                            <option selected>Escolha...</option>
-                            <option></option>
+                            <option id="AC">AC</option>
+                            <option id="AL">AL</option>
+                            <option id="AP">AP</option>
+                            <option id="AM">AM</option>
+                            <option id="BA">BA</option>
+                            <option id="CE">CE</option>
+                            <option id="DF">DF</option>
+                            <option id="ES">ES</option>
+                            <option id="GO">GO</option>
+                            <option id="MA">MA</option>
+                            <option id="MT">MT</option>
+                            <option id="MS">MS</option>
+                            <option id="MG">MG</option>
+                            <option id="PA">PA</option>
+                            <option id="PB">PB</option>
+                            <option id="PR">PR</option>
+                            <option id="PE">PE</option>
+                            <option id="PI">PI</option>
+                            <option id="RJ">RJ</option>
+                            <option id="RN">RN</option>
+                            <option id="RS">RS</option>
+                            <option id="RO">RO</option>
+                            <option id="RR">RR</option>
+                            <option id="SC">SC</option>
+                            <option id="SP">SP</option>
+                            <option id="SE">SE</option>
+                            <option id="TO">TO</option>
+
                         </select>
                     </div>
 
