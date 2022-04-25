@@ -17,15 +17,12 @@ class LoginModel {
         };
     };
 
-    validaSenha(confSenha) {
+    validaSenha() {
         if (this.senha.val() == '') {
             throw new Error('*Este campo é obrigatório');
 
         } else if (this.senha.val().length < 8) {
-            throw new Error('*A senha deve ter no mínimo 8 caracteres');
-
-        } else if (this.senha.val() !== confSenha.val()) {
-            throw new Error('*As senhas não correspondem');
+            throw new Error('*Senha inválida!');
 
         } else {
             return this.senha.val();

@@ -12,8 +12,6 @@ class CadastroController {
             this.view.renderSuccess();
 
         } catch (error) {
-            console.log(typeof (error))
-            console.log(error)
             this.view.renderError(`${error}`, 'email-error', this.selectors.email);
         };
 

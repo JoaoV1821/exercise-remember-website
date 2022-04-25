@@ -8,9 +8,6 @@ class CadastroView {
 
         input.click(() => {
             msgId.text('');
-        })
+        });
     };
-
-    renderSuccess() {
-    }
 }
