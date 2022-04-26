@@ -1,3 +1,7 @@
-.head {
-    background-color: black;
+.root {
+    --background-bar: #14213d
+    --font: 'Oxygen', sans-serif;
+
+    font-family: var(--font);
+
 }

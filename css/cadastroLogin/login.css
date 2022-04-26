@@ -1,11 +1,7 @@
-.special-font {
-    font-family: 'Fugaz One', cursive;
-}
+.root {
+    --background-bar: #14213d
+    --font: 'Oxygen', sans-serif;
 
-.bg-color {
-    color: black;
-}
+    font-family: var(--font);
 
-.special-color {
-    background-color: #ffc300;
 }

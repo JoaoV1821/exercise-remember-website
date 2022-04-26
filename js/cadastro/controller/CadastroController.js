@@ -1,4 +1,5 @@
 class CadastroController {
+    
     constructor(selectors) {
         this.selectors = selectors;
         this.view = new CadastroView();
@@ -9,7 +10,6 @@ class CadastroController {
 
         try {
             this.model.validaEmail();
-            this.view.renderSuccess();
 
         } catch (error) {
             this.view.renderError(`${error}`, 'email-error', this.selectors.email);
@@ -17,7 +17,6 @@ class CadastroController {
 
         try {
             this.model.validaSenha(this.selectors.confSenha);
-            this.view.renderSuccess();
 
         } catch (error) {
             this.view.renderError(`${error}`, 'senha-error', this.selectors.senha);
@@ -25,7 +24,6 @@ class CadastroController {
 
         try {
             this.model.validaRg();
-            this.view.renderSuccess();
 
         } catch (error) {
             this.view.renderError(`${error}`, 'rg-error', this.selectors.rg);

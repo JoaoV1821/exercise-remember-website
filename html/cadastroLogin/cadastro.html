@@ -8,23 +8,27 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/cadastroLogin/cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/login.css">
     <title>Cadastro</title>
 </head>
 
-<body>
+<body class="root">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="../../index.html">ExerciseRemember</a>
+            <a class="navbar-brand" href="../../index.html">HealthRemember</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse justify-content-end">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="../../index.html">Home</a>
-                    <a class="nav-item nav-link" href="../../html/cadastroLogin/login.html">Login</a>
-                    <a class="nav-item nav-link" href="../detalhes.html">Sobre</a>
+                    <a class="nav-item nav-link" href="../detalhes.html">Serviços</a>
                     <a class="nav-item nav-link" href="../../html/recSenhaContato/contatos.html">Contato</a>
+                    <a class="nav-item nav-link" href="../../html/cadastroLogin/login.html">Login</a>
                     <a class="nav-item nav-link active" href="#">Cadastro<span class="sr-only">(current)</span></a>
                 </div>
             </div>
@@ -32,11 +36,6 @@
     </header>
 
     <main>
-
-        <section class="succsess-msg">
-            <p class="text-success" id="text-success"></p>
-        </section>
-
         <section class="form m-5 d-flex flex-column align-items-center">
             <h1 class="mt-2 mb-3">Cadastro</h1>
             <form class="d-flex flex-column align-items-center mt-4">
@@ -69,11 +68,13 @@
                         <label for="cep">CEP</label>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                              <button class="btn btn-outline-secondary" type="submit" id="cep-submit">Procurar</button>
+                                <button class="btn btn-outline-secondary" type="submit"
+                                    id="cep-submit">Procurar</button>
                             </div>
-                            <input type="text" class="form-control" placeholder="Cep" aria-label="" aria-describedby="basic-addon1" id="cep">
-                          </div>
-                          <small class="error" id="cep-error"></small>
+                            <input type="text" class="form-control" placeholder="Cep" aria-label=""
+                                aria-describedby="basic-addon1" id="cep">
+                        </div>
+                        <small class="error" id="cep-error"></small>
                     </div>
 
                     <div class="form-group col-md-3">
@@ -137,13 +138,12 @@
 
                 </div>
                 <button type="submit" class="btn btn-primary" id="submit">Enviar</button>
-
             </form>
         </section>
     </main>
 
     <footer class="text-center">
-        <p class="m-0"> copyright 2022&copy; ExerciseRemember. Todos os direitos reservados</p>
+        <p class="m-0"> copyright 2022&copy; HealthRemember. Todos os direitos reservados</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
