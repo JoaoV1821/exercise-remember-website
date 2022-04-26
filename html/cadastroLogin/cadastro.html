@@ -1,12 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/cadastroLogin/cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/login.css">
+    <title>Cadastro</title>
 </head>
-<body>
-    
+
+<body class="root">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="../../index.html">HealthRemember</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="../../index.html">Home</a>
+                    <a class="nav-item nav-link" href="../detalhes.html">Serviços</a>
+                    <a class="nav-item nav-link" href="../../html/recSenhaContato/contatos.html">Contato</a>
+                    <a class="nav-item nav-link" href="../../html/cadastroLogin/login.html">Login</a>
+                    <a class="nav-item nav-link active" href="#">Cadastro<span class="sr-only">(current)</span></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form m-5 d-flex flex-column align-items-center">
+            <h1 class="mt-2 mb-3">Cadastro</h1>
+            <form class="d-flex flex-column align-items-center mt-4">
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" placeholder="Email" id="email">
+                        <small class="error" id="email-error"></small>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="inputPassword4">Senha</label>
+                        <input type="password" class="form-control" placeholder="Senha" id="senha">
+                        <small class="error" id="senha-error"></small>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="inputPassword4">Confirme a senha</label>
+                        <input type="password" class="form-control" placeholder="Senha" id="confSenha">
+                        <small class="error" id="senha-error"></small>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="rg">RG</label>
+                        <input type="text" class="form-control" id="rg" placeholder="00.000.000-0">
+                        <small class="error" id="rg-error"></small>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="cep">CEP</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-outline-secondary" type="submit"
+                                    id="cep-submit">Procurar</button>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Cep" aria-label=""
+                                aria-describedby="basic-addon1" id="cep">
+                        </div>
+                        <small class="error" id="cep-error"></small>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="inputState">Estado</label>
+                        <select id="Estado" class="form-control">
+                            <option id="AC">AC</option>
+                            <option id="AL">AL</option>
+                            <option id="AP">AP</option>
+                            <option id="AM">AM</option>
+                            <option id="BA">BA</option>
+                            <option id="CE">CE</option>
+                            <option id="DF">DF</option>
+                            <option id="ES">ES</option>
+                            <option id="GO">GO</option>
+                            <option id="MA">MA</option>
+                            <option id="MT">MT</option>
+                            <option id="MS">MS</option>
+                            <option id="MG">MG</option>
+                            <option id="PA">PA</option>
+                            <option id="PB">PB</option>
+                            <option id="PR">PR</option>
+                            <option id="PE">PE</option>
+                            <option id="PI">PI</option>
+                            <option id="RJ">RJ</option>
+                            <option id="RN">RN</option>
+                            <option id="RS">RS</option>
+                            <option id="RO">RO</option>
+                            <option id="RR">RR</option>
+                            <option id="SC">SC</option>
+                            <option id="SP">SP</option>
+                            <option id="SE">SE</option>
+                            <option id="TO">TO</option>
+
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="inputCity">Cidade</label>
+                        <input type="text" class="form-control" id="cidade">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="inputCity">Bairro</label>
+                        <input type="text" class="form-control" id="bairro">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="inputCity">Rua</label>
+                        <input type="text" class="form-control" id="rua">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="inputCity">Número</label>
+                        <input type="text" class="form-control" id="numero">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="inputCity">Complemento</label>
+                        <input type="text" class="form-control" id="complemento">
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary" id="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="text-center">
+        <p class="m-0"> copyright 2022&copy; HealthRemember. Todos os direitos reservados</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    <script src="../../js/cadastro/model/CadastroModel.js"></script>
+    <script src="../../js/cadastro/view/CadastroView.js"></script>
+    <script src="../../js/cadastro/controller/CadastroController.js"></script>
+    <script src="../../js/cadastro/main.js"></script>
 </body>
+
 </html>

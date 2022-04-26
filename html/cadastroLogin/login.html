@@ -1,12 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/cadastroLogin/login.css">
+    <title>Login</title>
 </head>
-<body>
-    
+
+<body class="root">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-color">
+            <a class="navbar-brand" href="../../index.html">HealthRemember</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="../../index.html">Home</a>
+                    <a class="nav-item nav-link" href="../detalhes.html">Serviços</a>
+                    <a class="nav-item nav-link" href="../../html/recSenhaContato/contatos.html">Contato</a>
+                    <a class="nav-item nav-link active" href="../../html/cadastroLogin/login.html">Login<span
+                            class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="../cadastroLogin/cadastro.html">Cadastro</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login form m-5 d-flex flex-column align-items-center">
+            <h2 class="mt-2 mb-3">Login</h2>
+
+            <form class="mt-2">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email"
+                        aria-describedby="emailHelp">
+                    <div id="email" class="form-text">
+                        <i><small>Nós nunca iremos compartilhar seu email com terceiros</small></i>
+                    </div>
+                    <small class="error" id="email-error"></small>
+                </div>
+
+                <div class="mb-3">
+                    <div class="d-flex flex-row justify-content-between">
+                        <label for="senha" class="form-label">Senha</label>
+                        <a class="text-center" href="../recSenhaContato/recSenha.html">Esqueceu sua senha?</a>
+                    </div>
+
+                    <input type="password" class="form-control" placeholder="Senha" id="senha">
+                    <small class="error" id="senha-error"></small>
+                </div>
+
+                <section class="bottom-login d-flex flex-row justify-content-between align-items-center">
+                    <button type="submit" class="btn btn-primary" id="submit">Entrar</button>
+
+                    <div class="mb-2 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Manter logado</label>
+                    </div>
+                </section>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="mb-2">
+        <p class="text-center"> copyright 2022&copy; HealthRemember. Todos os direitos reservados</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    <script src="../../js/login/model/LoginModel.js"></script>
+    <script src="../../js/login/view/LoginView.js"></script>
+    <script src="../../js/login/controller/loginController.js"></script>
+    <script src="../../js/login/main.js"></script>
+
 </body>
+
 </html>
