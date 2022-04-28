@@ -1,0 +1,29 @@
+main{
+    margin-left: auto;
+    margin-right: auto;
+    height: 523px;
+    background-color: #E52B50;
+    padding-top: 112px;
+    width: 1259px;
+}
+footer{
+    background-color: black;
+    color: white;
+    
+}
+.btn{
+    width: 520px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: 4px;
+    margin-top: 23px;
+    border-radius: 133px;
+    background-color: #04e762;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
