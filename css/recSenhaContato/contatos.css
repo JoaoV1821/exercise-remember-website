@@ -20,3 +20,16 @@
 .img_b, .img_v, .img_j{
     border-radius: 21px;
 }
+nav{
+    list-style: none;
+    padding: 0;
+    background-color: #0e0e0e;
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Fredoka One', cursive;
+    justify-content: center;
+
+}
