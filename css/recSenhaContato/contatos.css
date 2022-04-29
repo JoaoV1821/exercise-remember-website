@@ -13,9 +13,9 @@
     flex-direction: column;
     align-items: center;
 }
-footer{
-background-color: black;
-color: white;
+.m-0{
+    width: 1220px;
+    color: white;
 }
 .img_b, .img_v, .img_j{
     border-radius: 21px;
