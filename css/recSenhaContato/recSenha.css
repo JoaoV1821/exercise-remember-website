@@ -15,7 +15,7 @@ footer{
     width: 520px;
     height: 40px;
     margin-left: auto;
-    margin-right: 4px;
+    margin-right: 28px;
     margin-top: 23px;
     border-radius: 133px;
     background-color: #04e762;
@@ -26,4 +26,7 @@ footer{
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
+}
+.h2{
+    font-size: medium;
 }
