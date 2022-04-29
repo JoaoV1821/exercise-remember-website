@@ -305,3 +305,8 @@ h3{
     text-align: center;
     justify-content: center;
 }
+
+ .text-center{
+    color: white;
+    background-color: #343a40;
+}
