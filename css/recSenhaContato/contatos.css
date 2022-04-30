@@ -33,3 +33,11 @@ nav{
     justify-content: center;
 
 }
+
+@media only screen and (max-width: 426px) {
+    body, nav {
+        flex-direction: column;
+        font-size: 30px;
+    }
+};
+

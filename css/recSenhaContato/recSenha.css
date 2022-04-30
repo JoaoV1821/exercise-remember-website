@@ -43,3 +43,16 @@ nav{
     justify-content: center;
   
 }
+
+@media only screen and (max-width: 426px) {
+    body, nav, main, .form {
+        display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+        font-size: 30px;
+        width: 520px;
+    }
+};
